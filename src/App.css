@@ -44,6 +44,7 @@ nav {
   align-items: center;
   padding: 10px;
 }
+
 .pokedex-grid {
   display: grid;
   gap: 10px;
@@ -64,6 +65,17 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 10px 10px 0px;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-top h3 {
+  text-transform: capitalize;
 }
 
 .pagination-container {

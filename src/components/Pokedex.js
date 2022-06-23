@@ -1,4 +1,5 @@
 import React from "react";
+import { Load, PokedexGrid, PokedexHeader } from "../styles";
 import Pagination from "./Pagination";
 import Pokemon from "./Pokemon";
 
@@ -19,7 +20,7 @@ const Pokedex = (props) => {
 
   return (
     <div>
-      <div className="pokedex-header">
+      <PokedexHeader>
         <h1>Pokemons</h1>
         <Pagination 
           page={page+1}
@@ -27,18 +28,18 @@ const Pokedex = (props) => {
           onLeftClick={onLeftClickHandler}
           onRightClick={onRightClickHandler}
         />
-      </div>
+      </PokedexHeader>
       {loading ? (
-        <div>Carregando...</div>
+        <Load>Carregando...</Load>
       ) : (
-        <div className="pokedex-grid">
+        <PokedexGrid>
           {pokemons &&
             pokemons.map((pokemon, index) => {
               return (
                   <Pokemon key={index} pokemon={pokemon} />
               );
             })}
-        </div>
+        </PokedexGrid>
       )}
     </div>
   );

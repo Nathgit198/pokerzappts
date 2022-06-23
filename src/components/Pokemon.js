@@ -1,35 +1,32 @@
 import React from "react";
+import { CardTop, PokemonCard, PokemonType, PokemonImage, CardBody } from "../styles";
 
 const Pokemon = (props) => {
   const { pokemon } = props;
-  
+
   return (
-    <div className="pokemon-card">
-      <div className="pokemon-image-container">
+    <PokemonCard>
+      <PokemonImage>
         <img
-          alt={pokemon.name}
-          src={pokemon.sprites.front_default}
-          className="pokemon-image"
+            alt={pokemon.name}
+            src={pokemon.sprites.front_default}
+            className="pokemon-image"
         />
-      </div>
-      <div className="card-body">
-        <div className="card-top">
-          <h3> {pokemon.name}</h3>
-          <div> {pokemon.id}</div>
-        </div>
-        <div className="card-bottom">
+        <div>#{pokemon.id}</div>
+      </PokemonImage>
+      <CardBody>
+        <CardTop> {pokemon.name} </CardTop>
           <div className="card-type">
             {pokemon.types.map((type, index) => {
               return (
-                <div key={index} className="pokemon-type-text">
-                  {type.type.name}
-                </div>
+                <PokemonType key={index}>
+                  {type.type.name} 
+                </PokemonType>
               );
             })}
           </div>
-        </div>
-      </div>
-    </div>
+      </CardBody>
+    </PokemonCard>
   );
 };
 

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getPokemonData, getPokemons, searchPokemon } from "./api";
-import "./App.css";
+
 import Navbar from "./components/Navbar";
 import Pokedex from "./components/Pokedex";
 import Searchbar from "./components/Searchbar";
+import { GlobalStyle } from "./styles";
 
 function App() {
   const [page, setPage] = useState(0);
@@ -54,6 +55,7 @@ function App() {
 
   return (
     <div>
+      <GlobalStyle />
       <Navbar />
       <Searchbar onSearch={onSearchHandler} />
       {notFound ? (

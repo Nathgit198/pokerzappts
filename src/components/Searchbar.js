@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { SearchbarContainer } from "../styles";
 
 const Searchbar = (props) => {
     const [search, setSearch] = useState("Ponyta")
@@ -16,14 +17,14 @@ const Searchbar = (props) => {
     }
 
     return (
-        <div className="searchbar-container">
+        <SearchbarContainer>
             <div className="searchbar">
                 <input placeholder="Pesquisar pokemon" onChange={onChangeHandler} />
             </div>
             <div className="searchbar-btn">
                 <button onClick={onButtonClickHandler}>Buscar</button>
             </div>
-        </div>
+        </SearchbarContainer>
     )
 }
 
