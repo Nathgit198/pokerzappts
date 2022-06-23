@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav } from "../styles";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const logoImg =
@@ -8,6 +9,14 @@ const Navbar = () => {
     <Nav>
       <div>
         <img alt="pokemon-logo" src={logoImg} className="navbar-img" />
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/pokemons">Pokemons</Link>
+          </li>
+        </ul>
       </div>
     </Nav>
   );
