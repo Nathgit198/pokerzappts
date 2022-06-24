@@ -1,5 +1,5 @@
 import React from "react";
-import { Load, PokedexGrid, PokedexHeader } from "../styles";
+import { Load, PokedexFlexbox, PokedexHeader, SearchDiv } from "../styled/pokemon-style";
 import Pagination from "./Pagination";
 import Pokemon from "./Pokemon";
 
@@ -18,6 +18,8 @@ const Pokedex = (props) => {
       }
   }
 
+  const searchImage = "../undraw_searching.svg";
+
   return (
     <div>
       <PokedexHeader>
@@ -30,16 +32,19 @@ const Pokedex = (props) => {
         />
       </PokedexHeader>
       {loading ? (
-        <Load>Carregando...</Load>
+          <SearchDiv>
+            <img src={searchImage} />
+            <Load>Carregando...</Load>
+          </SearchDiv>
       ) : (
-        <PokedexGrid>
+        <PokedexFlexbox>
           {pokemons &&
             pokemons.map((pokemon, index) => {
               return (
                   <Pokemon key={index} pokemon={pokemon} />
               );
             })}
-        </PokedexGrid>
+        </PokedexFlexbox>
       )}
     </div>
   );

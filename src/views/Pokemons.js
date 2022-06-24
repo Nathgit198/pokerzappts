@@ -3,8 +3,9 @@ import { getPokemonData, getPokemons, searchPokemon } from "../api";
 import Navbar from "../components/Navbar";
 import Pokedex from "../components/Pokedex";
 import Searchbar from "../components/Searchbar";
-import { GlobalStyle } from "../styles";
 
+import { GlobalStyle } from "../styled/global-style";
+import { NotFoundDiv } from "../styled/pokemon-style";
 
 function Pokemons() {
 
@@ -54,13 +55,18 @@ function Pokemons() {
       setLoading(false)
     } 
 
+  const notFoundImage = "../undraw_not_found.svg";
+
     return (
         <div>
         <GlobalStyle />
         <Navbar />
         <Searchbar onSearch={onSearchHandler} />
         {notFound ? (
-          <div className="notFound-text">Não encontramos esse pokemon, tente digitar novamente</div>
+          <NotFoundDiv>
+            <img src={notFoundImage} />
+            <p>Não encontramos esse pokemon, tente digitar novamente</p>
+          </NotFoundDiv>
         ) : 
         (<Pokedex
         pokemons={pokemons}

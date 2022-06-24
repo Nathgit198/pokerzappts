@@ -1,5 +1,5 @@
 import React from "react";
-import { PaginationContainer } from "../styles";
+import { PaginationContainer } from "../styled/pokemon-style";
 
 const Pagination = (props) => {
     const {page, totalPages, onLeftClick, onRightClick} = props

@@ -1,6 +1,6 @@
 import React from "react";
-import { Nav } from "../styles";
-import { Link } from 'react-router-dom';
+import { Nav } from "../styled/global-style";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const logoImg =
@@ -8,15 +8,15 @@ const Navbar = () => {
   return (
     <Nav>
       <div>
-        <img alt="pokemon-logo" src={logoImg} className="navbar-img" />
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/pokemons">Pokemons</Link>
-          </li>
-        </ul>
+      <img alt="pokemon-logo" src={logoImg} className="navbar-img" />
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/pokemons">Pokemons</Link>
+        </li>
+      </ul>
       </div>
     </Nav>
   );

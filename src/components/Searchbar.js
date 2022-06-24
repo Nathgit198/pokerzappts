@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SearchbarContainer } from "../styles";
+import { SearchbarContainer } from "../styled/pokemon-style";
 
 const Searchbar = (props) => {
     const [search, setSearch] = useState("Ponyta")
