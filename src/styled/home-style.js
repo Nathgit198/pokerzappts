@@ -1,13 +1,15 @@
 import styled from "styled-components";
-import { GlobalStyle } from "./global-style";
+import { GlobalStyle, device } from "./global-style";
 
 export const Section = styled.section`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+  margin: var(--little-size);
 
   div:nth-child(1) h1 {
-      font-size: 60px;
+    font-size: var(--fontL);
   }
   div:nth-child(1) button {
     background: var(--btn-home);
@@ -16,29 +18,24 @@ export const Section = styled.section`
     height: var(--little-size);
     border-radius: var(--little);
     cursor: pointer;
-}
+    transition: 0.4s;
+  }
+  div:nth-child(1) button:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const Pikachu = styled.img`
-  width: 850px;
-  position: absolute;
-  right: 8rem;
-  z-index: 1;
-`;
+  max-width: var(--pikachuM);
+  max-height: var(pikachuS);
+  width: auto;
+  height: auto;
 
-export const Pokebola = styled.img`
-  width: 450px;
-  position: relative;
-  right: -43rem;
-  top: 3rem;
-  transform: rotate(354deg);
-`;
-
-export const PokebolaRocket = styled.img`
-  width: 250px;
-  position: relative;
-  left: -34rem;
-  top: -5rem;
-  z-index: -2;
-  transform: rotate(12deg);
+  @media ${device.mobileS} {
+    width: 100%;
+  }
+  @media ${device.laptop} {
+    display: flex;
+    flex-direction: column;
+  }
 `;

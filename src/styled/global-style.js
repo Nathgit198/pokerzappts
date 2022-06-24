@@ -1,15 +1,40 @@
 import styled, { createGlobalStyle } from "styled-components";
 
+const size = {
+  mobileS: "320px",
+  mobileM: "375px",
+  mobileL: "425px",
+  tablet: "768px",
+  laptop: "1024px",
+  laptopL: "1440px",
+  desktop: "2560px",
+};
+export const device = {
+  mobileS: `(min-width: ${size.mobileS})`,
+  mobileM: `(min-width: ${size.mobileM})`,
+  mobileL: `(min-width: ${size.mobileL})`,
+  tablet: `(min-width: ${size.tablet})`,
+  tabletM: `(max-width: ${size.tablet})`,
+  laptop: `(min-width: ${size.laptop})`,
+  laptopM: `(min-width: ${size.laptopL})`,
+  desktop: `(min-width: ${size.desktop})`,
+};
+
 export const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
+    body {
+      overflow: hidden;
+    }
     :root {
         /* Fonts */
-        --fonts-body: Roboto, sans-serif;
-        --fonts:heading: ;
+        --font: 16px;
+        --fontS: 25px;
+        --fontM: 35px;
+        --fontL: 60px;
 
         /* Fonts: Weight */
         --font-little: 14px;
@@ -32,7 +57,8 @@ export const GlobalStyle = createGlobalStyle`
         --small-size: 6.25rem;
         --medium-size: 15.625rem;
         --big-size: 31.25rem;
-        --pikachu-size: 800px;
+        --pikachuS: 40.625rem;
+        --pikachuM: 53.125rem;
         --very-big: 87.5rem;
 
         /* Borders */
@@ -70,5 +96,8 @@ export const Nav = styled.section`
   li a {
     list-style: none;
     text-decoration: none;
+    font-size: var(--font);
   }
 `;
+
+

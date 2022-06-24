@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import { GlobalStyle } from "./global-style";
+import { device, GlobalStyle } from "./global-style";
 
 export const SearchbarContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   margin: var(--big) var(--medium);
+  flex-wrap: wrap;
 
   div input {
-    width: var(--very-big);
     padding: var(--little);
     margin: var(--little);
     background: transparent;
@@ -26,6 +26,24 @@ export const SearchbarContainer = styled.div`
     border: none;
     padding: var(--little);
     cursor: pointer;
+  }
+
+  @media ${device.mobileS} {
+    justify-content: flex-start;
+
+    div input {
+      width: var(--medium-size);
+    }
+  }
+  @media ${device.laptop} {
+    div input {
+      width: var(--very-big);
+    }
+  }
+  @media ${device.laptopM} {
+    div input {
+      width: var(--very-big);
+    }
   }
 `;
 
@@ -126,17 +144,28 @@ export const SearchDiv = styled.div`
   }
 `;
 
-export const Load = styled.div `
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: var(--small-size);
+export const Load = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--small-size);
+  
+  max-width: var(--pikachuM);
+  max-height: var(pikachuS);
+  width: auto;
+  height: auto;
 `;
 export const NotFoundDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 auto;
+
+  max-width: var(--pikachuM);
+  max-height: var(pikachuS);
+  width: auto;
+  height: auto;
 
   img {
     width: var(--big-size);
