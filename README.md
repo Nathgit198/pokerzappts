@@ -4,6 +4,7 @@
 
 ## Projeto
 Desenvolver uma aplicação para pesquisar Pokémons e suas características utilizando React JS e React Testing Library, para a estilização foi utilizado Styled Components. Todos os dados foram retirados da api [PokéApi](https://pokeapi.co/).
+Como eu não tinha muito conhecimentos do Styled Components não sei dizer ao certo se está 100% correto. Mas tentei desenvolver o melhor possível com os meus conhecimentos.
 
 ## Tecnologias
 - React JS
